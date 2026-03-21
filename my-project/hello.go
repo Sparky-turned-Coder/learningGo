@@ -2,10 +2,10 @@ package main
 
 import "fmt"
 
-func Hello() string { // We created a seperate function, added the keyword 'string'. This means this function returns a 'string'.
-	return "Hello, World!"
+func Hello(name string) string { // We created a seperate function, added the keyword 'string'. This means this function returns a 'string'.
+	return "Hello, " + name + "!"
 }
 
 func main() {
-	fmt.Println(Hello()) // Here we call our new function, Hello()
+	fmt.Println(Hello("world")) // Here we call our new function, Hello()
 }

@@ -21,3 +21,16 @@ your system, or the module you're currently working on.
 To view that documentation, enter this in the terminal:
 
     - $ go doc fmt
+
+Consider the function below:
+
+    func Hello(name string) string {
+        return "Hello, " + name + "!"
+    }
+
+- the func Hello now accepts an arguement (type 'string') which we call 'name'
+- the second 'string' declared after the paranthesis tells the function to return a value of type 'string'.
+- finally, our function returns the string(name) passed to us by concatenating it with 
+"Hello, " and "!"  Resulting in:   "Hello, Chris!"
+
+
