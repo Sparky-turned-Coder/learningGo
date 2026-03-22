@@ -30,7 +30,15 @@ Consider the function below:
 
 - the func Hello now accepts an arguement (type 'string') which we call 'name'
 - the second 'string' declared after the paranthesis tells the function to return a value of type 'string'.
-- finally, our function returns the string(name) passed to us by concatenating it with 
-"Hello, " and "!"  Resulting in:   "Hello, Chris!"
+- finally, our function returns the string(name) passed to us by concatenating it with "Hello, " and "!"  Resulting in:   "Hello, Chris!"
+
+### A note on source control
+
+At this point, if you are using source control (which we do. We use Git). I would commit the code as it is. We have working software backed by a test.
+
+(This is referring to our Hello World test, which passed after successfully concatenating our string with the value of 'name')
+
+I wouldn't push to main though, because I plan to refactor next. It is nice to commit at this point in case you somehow get into a mess with refactoring - 
+you can always go back to the working version.
 
 
