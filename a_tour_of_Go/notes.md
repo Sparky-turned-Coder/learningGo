@@ -140,3 +140,11 @@ For variables of an __interface{}__ (or __any__) type, a __type assertion__ is u
 >}
 
 Using the "comma, ok" idiom is safer as it prevents a runtime panic if the assertion fails. A __type switch__ is also useful for handling multiple possible types stored in an interface.
+
+## Constants
+
+Constants are declared like variables, but with the __const__ keyword.
+
+Constants can be character, string, boolean, or numeric values.
+
+Constants cannot be declared using the __:=__ operator.
