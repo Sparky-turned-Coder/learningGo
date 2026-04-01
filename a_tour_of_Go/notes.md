@@ -148,3 +148,114 @@ Constants are declared like variables, but with the __const__ keyword.
 Constants can be character, string, boolean, or numeric values.
 
 Constants cannot be declared using the __:=__ operator.
+
+Only a Constant variable can be 'untyped'.
+
+## Numeric Constants
+
+Numeric constants are high-precision _values_.
+
+An untyped constant takes the type needed by its context.
+
+__Example:__ 
+
+### Step 1: What is '1 << 100'?
+
+> Big = 1 << 100
+
+That __<<__ is a _bit shift left_.
+
+Think of it like this:
+
+* 1 << 1 == 2
+    * translates to: 10 in binary (or 2)
+* 1 << 2 == 4
+    * translates to: 100 in binary (or 4)
+* 1 << 3 == 8
+    * translates to: 1000 in binary (or 8)
+
+So:
+
+* 1 << 100 == 2^100 (a massive number)
+
+__Important:__ In Go, this is an untyped constant, not an int.
+
+That means:
+
+* It's not limited by __int__ size (like 64-bit limits)
+* It can be arbitrarily large until you try to use it somewhere with a type
+
+### Step 2: What is 'Big >> 99'
+
+Now we shift right:
+
+* Big = 2^100
+* Big >> 99 = 2^1 
+
+Thus, Small = 2
+
+__Why this example in "A Tour of Go" exists__
+
+This line is the whole lesson:
+
+> Untyped constants in Go are flexible until a type is required.
+
+* 'Small' can become __int__ or __float64__
+* 'Big' avoids overflow because it _waits_ to become a type
+
+__The "aha" mental model__
+
+Think of untyped constants like this:
+
+> "They are just pure values - they don't _commit_ to a type until forced to."
+
+__The Rule (this is the key takeaway)__ 
+
+> Untyped constants can only become a type if the value fits in that type.
+
+__Why Big(1 << 100) fails__
+
+* __int__ (on your machine) is a 64-bit
+* Max value is 2^63 - 1
+
+### Example Use cases:
+
+Bit shifting is useful in real Go code:
+
+Working with flags/masks:
+
+    const (
+    FlagRead = 1 << 0   // 0001
+    FlagWrite = 1 << 1  // 0010
+    FlagExec = 1 << 2   // 0100
+    )
+
+Using Pi:
+
+    const Pi = 3.14159265358979323846
+
+* You can use Pi in __float32__, __float64__, or complex128__ calculations
+* No need to declare multiple versions
+
+Fast multiplication/division by powers of two:
+
+    x << 3  // same as x * 8
+    x >> 2  // same as x / 4
+
+* Low-level protocols / embedded systems where you manipulate bits
+
+## For loop
+
+Go has only one looping construct, the __for__ loop.
+
+The basic __for__ loop has three components seperated by semicolons:
+
+* The _init_ statement: executed before the first iteration
+* The _condition_ expression: evaluated before every iteration
+* The _post_ statement: executed at the end of every iteration
+
+The _init_ statement will often be a short variable declaration, and the variables declared there are visisble only in the scope of the __for__ statement.
+
+The loop will stop iterating once the boolean _condition_ evaluates to __false__.
+
+NOTE: Unlike other languages like C, Java, or Javascript there are no parantheses surrounding the three components of the __for__ statement and the _{ }_ are always requried.
