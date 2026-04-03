@@ -21,6 +21,8 @@ func convert(myString string) int {
 	return x
 }
 
+const X = 1 << 6
+
 func main() {
 	word := "Pleasant"
 	wordy := "Day"
@@ -32,4 +34,8 @@ func main() {
 	fmt.Printf("Well, hello there! %v isn't it?\n", concat(word, wordy))
 	fmt.Printf("The sum of your two numbers is: %v\n", addition(num1, num2))
 	fmt.Printf("The numerical representation of the strings '%v', '%v', and '%v' is %v, %v, %v, respectively.\n", x, y, z, convert(x), convert(y), convert(z))
+	fmt.Printf("The complex conversion of '1 << 6' is: %v\n", complex128(X))
+	fmt.Printf("The integer conversion of '1 <<6' is: %v\n", int(X))
+	fmt.Printf("The integer conversion plus 1 of '1 << 6' is: %v\n", int(X+1))
+	fmt.Printf("The float conversion plus .55 of '1 << 6' is: %v\n", float64(X+.55))
 }

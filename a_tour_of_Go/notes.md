@@ -168,11 +168,11 @@ That __<<__ is a _bit shift left_.
 Think of it like this:
 
 * 1 << 1 == 2
-    * translates to: 10 in binary (or 2)
+    * translates to: 10 in binary (or 2) or more accurately, 2^1
 * 1 << 2 == 4
-    * translates to: 100 in binary (or 4)
+    * translates to: 100 in binary (or 4) or more accurately, 2^2
 * 1 << 3 == 8
-    * translates to: 1000 in binary (or 8)
+    * translates to: 1000 in binary (or 8) or more accurately, 2^3
 
 So:
 
