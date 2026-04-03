@@ -18,9 +18,8 @@ func convert(num1 string) int {
 
 	if err != nil {
 		fmt.Println("Conversion failed.")
-	} else {
-		return new_num
 	}
+	return new_num
 }
 
 func main() {
@@ -28,8 +27,8 @@ func main() {
 	wordy := "Day"
 	x := 17
 	y := 18
-	z := "one"
+	z := "1"
 	fmt.Printf("Well, hello there! %v isn't it?\n", concat(word, wordy))
 	fmt.Printf("The sum of your two numbers is: %v\n", addition(x, y))
-	fmt.Printf("The numerical representation of 'One' is: %v\n", convert(z))
+	fmt.Printf("The numerical representation of string '1' is: %v\n", convert(z))
 }
